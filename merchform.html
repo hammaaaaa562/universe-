@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club T-Shirt Order</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="form-wrapper">
+    <div class="form-card">
+
+      <!-- ===== Header with PNG ===== -->
+      <div class="form-header">
+        <img src="images/header.png" alt="Club Banner" />
+      </div>
+
+      <!-- ===== FORM ===== -->
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+216 XX XXX XXX" pattern="[0-9+ ]{8,15}" required />
+
+        <label for="university">Your University / Institute</label>
+        <select id="university" required>
+          <option value="">Select your institution</option>
+          
+            <option>INSAT – Institut National des Sciences Appliquées et de Technologie</option>
+            <option>ENIT – École Nationale d'Ingénieurs de Tunis</option>
+            <option>ESPRIT – École Supérieure Privée d’Ingénierie et de Technologies</option>
+            <option>ENIS – École Nationale d'Ingénieurs de Sfax</option>
+            <option>ENISO – École Nationale d'Ingénieurs de Sousse</option>
+            <option>ENIM – École Nationale d'Ingénieurs de Monastir</option>
+            <option>ENIG – École Nationale d'Ingénieurs de Gabès</option>
+            <option>ENSI – École Nationale des Sciences de l’Informatique</option>
+            <option>ISSAT Sousse – Institut Supérieur des Sciences Appliquées et de Technologie de Sousse</option>
+            <option>ISSAT Sfax – Institut Supérieur des Sciences Appliquées et de Technologie de Sfax</option>
+            <option>ISSAT Kairouan – Institut Supérieur des Sciences Appliquées et de Technologie de Kairouan</option>
+            <option>ISSAT Gafsa – Institut Supérieur des Sciences Appliquées et de Technologie de Gafsa</option>
+            <option>ISSAT Mahdia – Institut Supérieur des Sciences Appliquées et de Technologie de Mahdia</option>
+            <option>ISIMM – Institut Supérieur d’Informatique et de Mathématiques de Monastir</option>
+            <option>ISITCOM – Institut Supérieur d’Informatique et des Techniques de Communication de Hammam Sousse</option>
+            <option>ISAMM – Institut Supérieur des Arts Multimédia de Manouba</option>
+            <option>ISG – Institut Supérieur de Gestion de Tunis</option>
+            <option>ISTIC – Institut Supérieur des Technologies de l’Information et de la Communication de Borj Cédria</option>
+            <option>ESSTE – École Supérieure des Sciences et Techniques de Tunis</option>
+          </optgroup>
+        </select>
+
+        <label for="size">Select Size</label>
+        <select id="size" required>
+          <option value="">Choose a size</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" max="10" value="1" required />
+
+
+        <button type="submit">Buy Now</button>
+      </form>
+
+      <!-- ===== SOCIAL ICONS ===== -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/universeisticclub" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/universe.istic.Club" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <p class="footer"> © 2025 UNIVERSE Merch </p>
+    </div>
+  </div>
+  <!-- Success Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <p>Your purchase is complete!<br>We will contact you soon.</p>
+    <button id="closePopup">OK</button>
+  </div>
+</div>
+<script>
+  const form = document.querySelector("form");
+  const popup = document.getElementById("popup");
+  const closePopup = document.getElementById("closePopup");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    popup.classList.add("show");
+    form.reset();
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.classList.remove("show");
+  });
+</script>
+
+</body>
+</html>
